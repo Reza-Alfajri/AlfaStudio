@@ -309,6 +309,12 @@ img {
   .porto .box {
     margin-top: 1rem;
   }
+  
+  /* Contact */
+  .email-content {
+    margin-right: 2rem;
+    margin-left: 2rem;
+  }
 }
 
 /* Phone tapi hampir selebar (Tablet) */
