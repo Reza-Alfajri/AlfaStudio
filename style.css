@@ -19,7 +19,7 @@
   --secondary-color: #ffa343;
   --box-shadow: 0px 15px 25px rgb(0, 0, 0, 0.08);
 
-  --h1-font: 6rem;
+  --h1-font: 4rem;
   --h2-font: 3rem;
   --p-font: 1rem;
   /* Transisi standar */
@@ -45,16 +45,13 @@ img {
 .navbar {
   box-shadow: var(--box-shadow);
   position: fixed; /* Ditempel di atas layar walau ketika discroll down */
-  top: 0;
-  right: 0;
-  z-index: 1000; /* z-index agar Navbar ada diposisi teratas */
+  z-index: 100; /* z-index agar Navbar ada diposisi teratas */
   width: 100%;
-  display: flex; /* Tampilan fleksibel */
   align-items: center;
   justify-content: space-between; /* Ruang di antara elemen, tapi di bootstrap sudah otomatis sebenarnya */
   transition: all 0.5s ease;
-  background-color: transparent;
-  backdrop-filter: blur(35px);
+  background-color: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(5px);
 }
 
 /* Logo Brand pada Navbar */
@@ -63,6 +60,7 @@ img {
   color: var(--text-color) !important; /* "!important" memberikan prioritas tertinggi*/
   font-weight: 700;
 }
+
 .navbar-brand span {
   color: var(--main-color);
 }
@@ -101,48 +99,49 @@ img {
   position: relative;
 }
 
+.carousel-item::before{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.6) 20%, rgba(0, 0, 0, 0) 40%);
+  z-index: 1;
+}
+
 .carousel-item img {
   width: 100vw; /* Lebar gambar sesuai viewport/keseluruhan layar */
   height: 100vh; /* Tinggi gambar sesuai viewport/seluruh layar */
   object-fit: cover; /* gambar mengisi seluruh area slider tanpa merusak ukuran gambar */
-  filter: brightness(80%); /* Kecerahan gambar diturunkan */
+  z-index: 0;
 }
 
-/* Home */
-.home-text {
-  position: absolute;
-  top: 60%;
-  left: 10%;
-  transform: translateY(-50%); /*Posisi class dinaikkan vertikal */
-  z-index: 1; /* z-index agar teks muncul di atas carousel */
-  text-align: left;
+/* Carousel Caption */
+.carousel-caption {
   color: var(--text-color);
-  max-width: 80%; /* lebar maksimum teks */
+  z-index: 2;
 }
 
-.home-text h3 {
-  font-size: 24px;
-  font-weight: 800; /* ketebelan font */
-  margin-bottom: 10px;
-  color: var(--main-color);
+.carousel-caption h3 {
+  font-size: 20px;
 }
 
-.home-text h1 {
+.carousel-caption h1 {
   font-size: var(--h1-font);
-  font-weight: 800;
+  font-weight: 700;
   margin-bottom: 20px;
-  color: var(--text-color);
+  color: var(--secondary-color);
 }
 
-.home-text p {
+.carousel-caption p {
   font-size: var(--p-font);
   font-weight: 500;
   color: var(--text-color);
-  margin-bottom: 35px;
-  color: var(--text-color);
+  margin-bottom: 30px;
 }
 
-/* Button on Home*/
+/* Button*/
 .btn-custom {
   display: inline-block;
   padding: 13px 40px;
@@ -257,21 +256,14 @@ img {
   transform: translateY(-3px);
 }
 
-/* Email Section */
-.email-content {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  align-items: center;
-  gap: 2rem;
-}
-
-.email-text h2 {
+/* Contact Section */
+.contact h2 {
   font-size: var(--h2-font);
   font-weight: 800;
   margin-bottom: 15px;
 }
 
-.email-text p {
+.contact p {
   font-size: var(--p-font);
   font-weight: 500;
   color: #ffffffab;
@@ -301,19 +293,17 @@ img {
 @media (max-width: 991px) {
   /* Portofolio */
   .porto .container {
-    margin-right: auto;
-    margin-left: auto;
     max-width: 95%; /* Lebar maksimum container portofolio menjadi 95% dari layar */
   }
-  
+
   .porto .box {
     margin-top: 1rem;
   }
-  
+
   /* Contact */
-  .email-content {
-    margin-right: 2rem;
-    margin-left: 2rem;
+  .contact {
+    margin-right: 1.5rem;
+    margin-left: 1.5rem;
   }
 }
 
@@ -321,7 +311,7 @@ img {
 @media (max-width: 767px) {
   /* Set ukuran font ketika mulai dibawah 768px (Tablet) */
   :root {
-    --h1-font: 3.5rem;
+    --h1-font: 2.5rem;
     --h2-font: 2.1rem;
   }
 
@@ -331,7 +321,7 @@ img {
     font-size: 16px;
     font-weight: 600;
   }
-  
+
   /* Set padding sisi kiri & kanan Navbar ketika mulai dibawah 768px (Tablet) */
   .navbar .container {
     padding: 0 2rem;
@@ -344,12 +334,12 @@ img {
 }
 
 /* Phone */
-@media (max-width: 455px) {
+@media (max-width: 456px) {
   /* Set ukuran font ketika mulai dibawah 456px */
   :root {
-    --h1-font: 3rem;
+    --h1-font: 2rem;
     --h2-font: 2rem;
-    --p-font: 0.9rem;
+    --p-font: 0.8rem;
   }
 
   /* Set ukuran logo Navbar ketika mulai dibawah 456px*/
@@ -361,26 +351,5 @@ img {
   /* Set ukuran Humberger Button */
   .navbar-toggler-icon {
     font-size: 15px;
-  }
-
-  /* Home */
-  .home-text {
-    top: 50%;
-  }
-
-  .home-text h3 {
-    font-size: 20px;
-  }
-
-  .home-text h1 {
-    font-size: var(--h1-font);
-    font-weight: 800;
-    margin-bottom: 60%;
-  }
-
-  .home-text p {
-    font-size: var(--p-font);
-    font-weight: 500;
-    margin-bottom: 35px;
   }
 }
