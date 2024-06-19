@@ -13,9 +13,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet" />
-  
+
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
 
     <!-- CSS Untuk custom tambahan-->
     <link rel="stylesheet" type="text/css" href="style.css" />
@@ -42,6 +42,9 @@
             <li class="nav-item">
               <a class="nav-link" href="#contact">Contact</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/rate.html">Rate</a>
+            </li>
           </ul>
         </div>
       </div>
@@ -61,19 +64,47 @@
       <div class="carousel-inner">
         <!-- Slide 1 -->
         <div class="carousel-item active">
-          <img src="img/Cover1.jpg" class="d-block w-100" alt="...">
+          <img src="img/Cover1.jpg" class="d-block w-100" alt="..." />
+          <div class="carousel-caption">
+            <div class="carousel-text">
+              <h3>Reza Alfajriansyah</h3>
+              <h1>Digital Imaging Artist</h1>
+              <p>I have been in digital imaging using Photoshop for 4 years.</p>
+            </div>
+          </div>
         </div>
         <!-- Slide 2 -->
         <div class="carousel-item">
-          <img src="img/Cover3.jpg" class="d-block w-100" alt="...">
+          <img src="img/Cover3.jpg" class="d-block w-100" alt="..." />
+          <div class="carousel-caption">
+            <div class="carousel-text">
+              <h3>Reza Alfajriansyah</h3>
+              <h1>Graphic Designer</h1>
+              <p>Dealing with photo manipulation, photo retouching and more.</p>
+            </div>
+          </div>
         </div>
         <!-- Slide 3 -->
         <div class="carousel-item">
-          <img src="img/Cover2.jpg" class="d-block w-100" alt="...">
+          <img src="img/Cover2.jpg" class="d-block w-100" alt="..." />
+          <div class="carousel-caption">
+            <div class="carousel-text">
+              <h3>Reza Alfajriansyah</h3>
+              <h1>Illustrator</h1>
+              <p>I have an official Adobe Certified Professional & Adobe Certified Associate from Adobe.</p>
+            </div>
+          </div>
         </div>
         <!-- Slide 4 -->
         <div class="carousel-item">
-          <img src="img/Cover4.jpg" class="d-block w-100" alt="...">
+          <img src="img/Cover4.jpg" class="d-block w-100" alt="..." />
+          <div class="carousel-caption">
+            <div class="carousel-text">
+              <h3>Reza Alfajriansyah</h3>
+              <h1>Photographer</h1>
+              <p>One of my artworks was selected by Adobe Gen Create to be exhibited at the Decades of the Ocean Exhibition officially organized by UNESCO.</p>
+            </div>
+          </div>
         </div>
       </div>
       <!-- Button untuk Carousel Controls -->
@@ -87,81 +118,59 @@
       </button>
     </div>
 
-    <!-- Home Section -->
-    <!-- Informasi tentang pembuat dan judul -->
-    <section class="home">
-      <div class="home-text">
-        <h3>Reza Alfajriansyah</h3>
-        <h1>
-          Digital <br />
-          Imaging Art
-        </h1>
-        <p>
-          I have been in digital imaging using Photoshop for 4 years, dealing with photo manipulation, photo retouching and more. I have an official Adobe Certified Professional & Adobe Certified Associate from Adobe. One of my artworks was
-          selected by Adobe Gen Create to be exhibited at the Decades of the Ocean Exhibition officially organized by UNESCO and UN Environmental Protection.
-        </p>
-        <!-- Button untuk pindah ke section galeri di halaman ini -->
-        <a href="#myart" class="btn btn-custom">My Gallery</a>
-      </div>
-    </section>
-
     <!-- Portofolio Section -->
     <!-- Kumpulan dari beberapa karya utama -->
     <section class="porto" id="myart">
-    <div class="container">
-      <div class="center-text mt-5">
-        <h2>My Art</h2>
-      </div>
-      <div class="row mt-5">
-        <!-- Karya-karya utama -->
-        <!-- Class "img-fluid" digunakan untuk membuat gambar responsif,
+      <div class="container">
+        <div class="center-text mt-5">
+          <h2>My Art</h2>
+        </div>
+        <div class="row mt-5">
+          <!-- Karya-karya utama -->
+          <!-- Class "img-fluid" digunakan untuk membuat gambar responsif,
              tanpa mengubah aspek rasionya -->
-        
-        <!-- Image 1 -->
-        <!-- Grid untuk menentukan lebar kolom pada tampilan responsif,
-             Ketika ukuran layar lebar (Desktop), kolom akan bernilai 3 dari total 12 kolom.
-             Sehingga akan menampilkan 4 gambar dalam 1 baris.
-             Ketika ukuran medium (Tablet), kolom akan bernilai 6 dari total 12 kolom.
-             Sehingga akan menampilkan 2 gambar dalam 1 baris.
-             Sedangkan pada mobile sudah otomatis menjadi bernilai 12.
-             Sehingga menampilkan 1 gambar dalam 1 baris -->
-        <div class="col-md-6 col-lg-3">
-          <div class="box">
-            <img src="img/Porto3.jpg" class="img-fluid" alt="Thumbnail 1">
-            <h6>Toba Lake</h6>
-            <h4>Golden Moment</h4>
+
+          <!-- Image 1 -->
+          <!-- Grid untuk menentukan lebar kolom pada tampilan responsif,
+             Ketika ukuran layar lebar (Desktop), akan menampilkan 4 gambar dalam 1 baris.
+             Ketika ukuran medium (Tablet), Sehingga akan menampilkan 2 gambar dalam 1 baris. -->
+          <div class="col-md-6 col-lg-3">
+            <div class="box">
+              <img src="img/Porto3.jpg" class="img-fluid" alt="Thumbnail 1" />
+              <h6>Toba Lake</h6>
+              <h4>Golden Moment</h4>
+            </div>
+          </div>
+          <!-- Image 2 -->
+          <div class="col-md-6 col-lg-3">
+            <div class="box">
+              <img src="img/Porto1.jpg" class="img-fluid" alt="Thumbnail 2" />
+              <h6>New</h6>
+              <h4>Journey</h4>
+            </div>
+          </div>
+          <!-- Image 3 -->
+          <div class="col-md-6 col-lg-3">
+            <div class="box">
+              <img src="img/Porto2.jpg" class="img-fluid" alt="Thumbnail 3" />
+              <h6>Harmony</h6>
+              <h4>Nusantara</h4>
+            </div>
+          </div>
+          <!-- Image 4 -->
+          <div class="col-md-6 col-lg-3">
+            <div class="box">
+              <img src="img/Porto4.jpg" class="img-fluid" alt="Thumbnail 4" />
+              <h6>Wonderful</h6>
+              <h4>Bromo</h4>
+            </div>
           </div>
         </div>
-        <!-- Image 2 -->
-        <div class="col-md-6 col-lg-3">
-          <div class="box">
-            <img src="img/Porto1.jpg" class="img-fluid" alt="Thumbnail 2">
-            <h6>New</h6>
-            <h4>Journey</h4>
-          </div>
-        </div>
-        <!-- Image 3 -->
-        <div class="col-md-6 col-lg-3">
-          <div class="box">
-            <img src="img/Porto2.jpg" class="img-fluid" alt="Thumbnail 3">
-            <h6>Harmony</h6>
-            <h4>Nusantara</h4>
-          </div>
-        </div>
-        <!-- Image 4 -->
-        <div class="col-md-6 col-lg-3">
-          <div class="box">
-            <img src="img/Porto4.jpg" class="img-fluid" alt="Thumbnail 4">
-            <h6>Wonderful</h6>
-            <h4>Bromo</h4>
-          </div>
+        <!-- Tombol untuk pindah ke halaman My Art Gallery yang menampilkan lebih banyak gambar -->
+        <div class="center-btn">
+          <a href="myart.html" class="btn btn-custom">See More</a>
         </div>
       </div>
-      <!-- Tombol untuk pindah ke halaman My Art Gallery yang menampilkan lebih banyak gambar -->
-      <div class="center-btn">
-        <a href="myart.html" class="btn btn-custom">See More</a>
-      </div>
-    </div>
     </section>
 
     <!-- Social Media Section -->
@@ -180,21 +189,33 @@
         </div>
       </div>
     </section>
-    
-    <!-- Email Section -->
-    <section class="email">
-      <div class="container">
-        <div class="row mt-5">
-          <div class="col-lg-12"> <!-- Kolom dengan lebar full/12 kolom -->
-            <div class="email-content">
-              <div class="email-text">
-                <h2>Ready for work together?</h2>
-                <p>Contact Me</p>
-                <a href="https://www.instagram.com/reza_alfa7/" class="btn btn-custom">Contact</a>
-              </div>
-            </div>
+
+    <!-- Contact Section -->
+    <section class="contact">
+      <div class="container mt-5">
+        <h2>Ready for work together?</h2>
+        <p>Contact Me</p>
+        <form class="row g-3">
+          <div class="col-12">
+            <label for="inputName" class="form-label">Name</label>
+            <input type="text" class="form-control" id="inputName" />
           </div>
-        </div>
+          <div class="col-md-6">
+            <label for="inputEmail" class="form-label">Email</label>
+            <input type="email" class="form-control" id="inputEmail" />
+          </div>
+          <div class="col-md-6">
+            <label for="inputPhone" class="form-label">Phone Number</label>
+            <input type="text" class="form-control" id="inputPhone" placeholder="+62 xxx xxxx xxxx" />
+          </div>
+          <div class="col-md-12">
+            <label for="inputQuestions" class="form-label">Your Questions?</label>
+            <textarea class="form-control" id="inputQuestions" rows="3"></textarea>
+          </div>
+          <div class="center-btn">
+            <button type="submit" class="btn btn-custom">Submit</button>
+          </div>
+        </form>
       </div>
     </section>
 
