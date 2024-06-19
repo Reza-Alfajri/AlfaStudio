@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- Tag viewport untuk mengatur tampilan responsif -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alfa Studio</title>
+
+    <!-- Remix Icon Library -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" />
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet" />
+  
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!-- CSS Untuk custom tambahan-->
+    <link rel="stylesheet" type="text/css" href="stylerate.css" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <div class="container">
+        <!-- Logo Brand di Kiri Navbar -->
+        <a class="navbar-brand" href="#">Alfa<span> Studio</span></a>
+        <!-- Humberger Button -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- Isi menu Navbar/Humberger button -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/myart.html">My Art</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/index.html">Contact</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link  active" href="/rate.html">Rate</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Rate Tabel -->
+    <section class="rate">
+        <div class="container">
+            <div class="center-text mt-5">
+                <h2>Rate Card</h2>
+            </div>
+            <table class="table table-dark table-striped mt-5">
+                <thead>
+                    <tr>
+                      <th scope="col">Services</th>
+                      <th scope="col">Duration</th>
+                      <th scope="col">Revision</th>
+                      <th scope="col">Rate</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                      <td>Instagram Feed</td>
+                      <td>1-2 Days</td>
+                      <td>1</td>
+                      <td>Start from $ 2.5 USD</td>
+                    </tr>
+                    <tr>
+                      <td>Brosur</td>
+                      <td>5-7 Days</td>
+                      <td>3</td>
+                      <td>$ 16 USD</td>
+                    </tr>
+                    <tr>
+                      <td>Brosur</td>
+                      <td>5-7 Days</td>
+                      <td>3</td>
+                      <td>$ 16 USD</td>
+                    </tr>
+                    <tr>
+                      <td>Book Cover</td>
+                      <td>3-5 Days</td>
+                      <td>1</td>
+                      <td>Start from $ 20 USD</td>
+                    </tr>
+                    <tr>
+                      <td>Concept Art</td>
+                      <td>7-14 Days</td>
+                      <td>2</td>
+                      <td> Start from $ 70 USD</td>
+                    </tr>
+                    <tr>
+                      <td>Speaker/Trainer</td>
+                      <td>1-2 Days</td>
+                      <td>-</td>
+                      <td>Start from $ 100 USD</td>
+                    </tr>
+                  </tbody>
+            </table>
+        </div>
+    </section>
+    <!-- Contact Section -->
+    <section class="contact">
+      <div class="container mt-5">
+        <h2>Ready for work together?</h2>
+        <p>Contact Me</p>
+        <form class="row g-3">
+          <div class="col-12">
+            <label for="inputName" class="form-label">Name</label>
+            <input type="text" class="form-control" id="inputName">
+          </div>
+          <div class="col-md-6">
+            <label for="inputEmail" class="form-label">Email</label>
+            <input type="email" class="form-control" id="inputEmail">
+          </div>
+          <div class="col-md-6">
+            <label for="inputPhone" class="form-label">Phone Number</label>
+            <input type="text" class="form-control" id="inputPhone" placeholder="+62 xxx xxxx xxxx">
+          </div>
+          <div class="col-md-12">
+            <label for="inputQuestions" class="form-label">Your Questions?</label>
+            <textarea class="form-control" id="inputQuestions" rows="3"></textarea>
+          </div>
+          <div class="center-btn">
+            <button type="submit" class="btn btn-custom">Submit</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- Copyright -->
+    <div class="copyright">
+      <p>By Reza Alfajriansyah | 235410081 | 2024</p>
+    </div>
+    <!-- Script untuk Bootstrap -->
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  </body>
+</html>

@@ -1,0 +1,241 @@
+/* Reset/Set nilai default element */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: 'Open Sans', sans-serif;
+  }
+  
+  /* Variabel untuk mempermudah */
+  :root {
+    --text-black: #1e1e1e;
+    --text-color: #fff;
+    --bg-color: #000;
+    --main-color: #9cf2ff;
+    --secondary-color: #ffa343;
+    --box-shadow: 0px 15px 25px rgb(0, 0, 0, 0.08);
+  
+    --h1-font: 6rem;
+    --h2-font: 3rem;
+    --p-font: 1rem;
+    /* Transisi standar */
+    --transition: all 0.5s ease;
+  }
+  
+  /* Set tampilan halaman */
+  body {
+    color: var(--text-color);
+    transition: var(--transition);
+    background: var(--bg-color);
+  }
+  
+  /* Set Gambar agar responsive */
+  img {
+    max-width: 100%; /*lebar maksimum gambar menjadi 100% dari lebar container */
+    height: auto; /* tingginya disesuaikan secara proporsional dengan lebar gambar */
+  }
+  
+  /* Navbar */
+  
+  /* Style Navbar */
+  .navbar {
+    box-shadow: var(--box-shadow);
+    position: fixed; /* Ditempel di atas layar walau ketika discroll down */
+    z-index: 100; /* z-index agar Navbar ada diposisi teratas */
+    width: 100%;
+    align-items: center;
+    justify-content: space-between; /* Ruang di antara elemen, tapi di bootstrap sudah otomatis sebenarnya */
+    transition: all 0.5s ease;
+    background-color: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(5px);
+  }
+  
+  /* Logo Brand pada Navbar */
+  .navbar-brand {
+    font-size: 33px;
+    color: var(--text-color) !important; /* "!important" memberikan prioritas tertinggi*/
+    font-weight: 700;
+  }
+  .navbar-brand span {
+    color: var(--main-color);
+  }
+  
+  /* Style isi Menu Navbar */
+  .navbar-nav .nav-link {
+    font-weight: 700;
+    color: var(--text-color) !important;
+  }
+  
+  /* Mengatur warna teks saat menu aktif atau hover */
+  .navbar-nav .nav-link.active,
+  .navbar-nav .nav-link:hover {
+    color: var(--main-color) !important;
+  }
+  
+  /* Humberger Button */
+  /* Mengubah warna humberger button jadi putih */
+  .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255,255,255,.5)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+  }
+  
+  /* Mengubah warna frame humber button jadi putih */
+  .navbar-toggler {
+    border-color: var(--text-color) !important;
+  }
+  
+  /* Hamburger Button Border saat Ditekan */
+  .navbar-toggler[type='button']:focus {
+    box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.5) !important;
+    border-color: var(--text-color) !important; /* Untuk mengubah warna menjadi putih */
+  }
+  
+  /* Rate Section */
+
+  /* Tittle Rate Section */
+  .rate {
+    padding: 40px 0; /* Atur padding top yang sesuai dengan tinggi navbar */
+    /* background-color: #f0f0f0; Untuk cek jarak*/
+  }
+    
+  .center-text {
+    text-align: center;
+  }
+
+  /* Table Section */
+  
+  .center-text h2 {
+    font-size: var(--h2-font);
+    font-weight: 800;
+  }
+
+  /* Contact Section */
+  .contact h2 {
+    font-size: var(--h2-font);
+    font-weight: 800;
+    margin-bottom: 15px;
+  }
+  
+  .contact p {
+    font-size: var(--p-font);
+    font-weight: 500;
+    color: #ffffffab;
+    margin-bottom: 25px;
+  }
+
+  /* Button */
+  .center-btn {
+    text-align: center;
+    margin-top: 4rem;
+  }
+
+  .btn-custom {
+    display: inline-block;
+    padding: 13px 40px;
+    background-color: var(--secondary-color);
+    color: var(--text-black);
+    font-size: 15px;
+    font-weight: 600;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    transition: all 0.5s ease;
+    cursor: pointer;
+  }
+  
+  /* Set saat button aktif atau hover */
+  .btn-custom:hover {
+    transform: translateX(10px);
+    border: 2px solid var(--text-color);
+    background-color: transparent;
+    color: var(--text-color);
+  }
+  
+  /* Copyright */
+  .copyright p {
+    margin-top: 3rem;
+    text-align: center;
+    padding: 20px;
+    color: #979797;
+    font-size: 15px;
+  }
+  
+  /* Responsive */
+  
+  /* Mode Desktop */
+  @media (min-width: 992px) {
+    .porto .box {
+      margin: 0 0.5rem; /* Jarak antar gambar pada mode desktop */
+      margin-top: 1rem;
+    }
+  }
+  
+  /* Mode Tablet */
+  @media (max-width: 991px) {
+    /* Portofolio */
+    .porto .container {
+      margin-right: auto;
+      margin-left: auto;
+      max-width: 95%; /* Lebar maksimum container portofolio menjadi 95% dari layar */
+    }
+  
+    .porto .box {
+      margin-top: 1rem;
+    }
+  
+    /* Contact */
+    .contact {
+      margin-right: 1.5rem;
+      margin-left: 1.5rem;
+    }
+  }
+  
+  /* Phone tapi hampir selebar (Tablet) */
+  @media (max-width: 767px) {
+    /* Set ukuran font ketika mulai dibawah 768px (Tablet) */
+    :root {
+      --h1-font: 3.5rem;
+      --h2-font: 2.1rem;
+    }
+  
+    /* Set ukuran button ketika mulai dibawah 768px (Tablet) */
+    .btn-custom {
+      padding: 10px 30px;
+      font-size: 16px;
+      font-weight: 600;
+    }
+  
+    /* Set padding sisi kiri & kanan Navbar ketika mulai dibawah 768px (Tablet) */
+    .navbar .container {
+      padding: 0 2rem;
+    }
+  
+    /* Set kecerahan gambar */
+    .porto .box img {
+      filter: brightness(100%);
+    }
+  }
+  
+  /* Phone */
+  @media (max-width: 456px) {
+    /* Set ukuran font ketika mulai dibawah 456px */
+    :root {
+      --h1-font: 3rem;
+      --h2-font: 2rem;
+      --p-font: 0.9rem;
+    }
+  
+    /* Set ukuran logo Navbar ketika mulai dibawah 456px*/
+    .navbar-brand {
+      font-size: 25px;
+      font-weight: 700;
+    }
+  
+    /* Set ukuran Humberger Button */
+    .navbar-toggler-icon {
+      font-size: 15px;
+    }
+  }
+  
