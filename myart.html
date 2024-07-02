@@ -13,9 +13,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet" />
-  
+
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
 
     <!-- CSS Untuk custom tambahan-->
     <link rel="stylesheet" type="text/css" href="stylemyartpage.css" />
@@ -53,78 +53,47 @@
     <!-- Portofolio Section -->
     <!-- Semua karya yang ada -->
     <section class="porto" id="myart">
-    <div class="container">
-      <div class="center-text mt-5">
-        <h2>My Art Gallery</h2>
+      <div class="container">
+        <div class="center-text mt-5">
+          <h2>My Art Gallery</h2>
+        </div>
+        <div class="row mt-5" id="portofolio-container">
+          <!-- Karya-karya utama akan dimuat disini-->
+        </div>
+
+        <!-- Script untuk memuat data JSON -->
+        <script>
+          async function getData() {
+            const url = 'gallery.json';
+            try {
+              const response = await fetch(url);
+              if (!response.ok) {
+                throw new Error(`Response status: ${response.status}`);
+              }
+
+              const json = await response.json();
+              console.log(json);
+
+              const container = document.getElementById('portofolio-container');
+              json.forEach((gallery) => {
+                container.innerHTML += `
+                <div class="col-md-6">
+                  <div class="box">
+                    <img src="${gallery.image}" class="img-fluid" alt="Thumbnail 1" />
+                    <h6>${gallery.subtitle}</h6>
+                    <h4>${gallery.title}</h4>
+                  </div>
+                </div>`;
+              });
+            } catch (error) {
+              console.error(error.message);
+            }
+          }
+
+          getData();
+        </script>
       </div>
-      <div class="row mt-5">
-        <!-- Karya-karya utama -->
-        <!-- Class "img-fluid" digunakan untuk membuat gambar responsif, tanpa mengubah aspek rasionya -->
-        
-        <!-- Image 1 -->
-        <!-- Grid untuk menentukan lebar kolom pada tampilan responsif,
-             Kolom akan bernilai 6 dari total 12 kolom.
-             Sehingga akan menampilkan 2 gambar dalam 1 baris baik itu di desktop ataupun tablet.
-             Sedangkan pada mobile sudah otomatis menjadi bernilai 12.
-             Sehingga menampilkan 1 gambar dalam 1 baris -->
-        <div class="col-md-6">
-          <div class="box">
-            <img src="img/Porto3.jpg" class="img-fluid" alt="Thumbnail 1">
-            <h6>Toba Lake</h6>
-            <h4>Golden Moment</h4>
-          </div>
-        </div>
-        <!-- Image 2 -->
-        <div class="col-md-6">
-          <div class="box">
-            <img src="img/Porto1.jpg" class="img-fluid" alt="Thumbnail 2">
-            <h6>New</h6>
-            <h4>Journey</h4>
-          </div>
-        </div>
-        <!-- Image 3 -->
-        <div class="col-md-6">
-          <div class="box">
-            <img src="img/Porto2.jpg" class="img-fluid" alt="Thumbnail 3">
-            <h6>Harmony</h6>
-            <h4>Nusantara</h4>
-          </div>
-        </div>
-        <!-- Image 4 -->
-        <div class="col-md-6">
-          <div class="box">
-            <img src="img/Porto4.jpg" class="img-fluid" alt="Thumbnail 4">
-            <h6>Wonderful</h6>
-            <h4>Bromo</h4>
-          </div>
-        </div>
-        <!-- Image 5 -->
-        <div class="col-md-6">
-          <div class="box">
-            <img src="img/Porto5.jpg" class="img-fluid" alt="Thumbnail 4">
-            <h6>On Eternal</h6>
-            <h4>Patrol</h4>
-          </div>
-        </div>
-        <!-- Image 6 -->
-        <div class="col-md-6">
-          <div class="box">
-            <img src="img/Porto6.jpg" class="img-fluid" alt="Thumbnail 4">
-            <h6>Forgetten</h6>
-            <h4>Forest</h4>
-          </div>
-        </div>
-        <!-- Image 7 -->
-        <div class="col-md-6">
-          <div class="box">
-            <img src="img/Porto7.jpg" class="img-fluid" alt="Thumbnail 4">
-            <h6>Recap</h6>
-            <h4>2022</h4>
-          </div>
-        </div>
-      </div>
-    </div>
-     </section>
+    </section>
 
     <!-- Social Media Section -->
     <section class="social-media" id="contact">
