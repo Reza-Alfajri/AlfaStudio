@@ -129,48 +129,44 @@
         <div class="center-text mt-5">
           <h2>My Art</h2>
         </div>
-        <div class="row mt-5">
-          <!-- Karya-karya utama -->
-          <!-- Class "img-fluid" digunakan untuk membuat gambar responsif,
-             tanpa mengubah aspek rasionya -->
-
-          <!-- Image 1 -->
-          <!-- Grid untuk menentukan lebar kolom pada tampilan responsif,
-             Ketika ukuran layar lebar (Desktop), akan menampilkan 4 gambar dalam 1 baris.
-             Ketika ukuran medium (Tablet), Sehingga akan menampilkan 2 gambar dalam 1 baris. -->
-          <div class="col-md-6 col-lg-3">
-            <div class="box">
-              <!-- "img-fluid" berfungsi agar gambar responsif dengan lebar maksimal 100% dari kontainer induknya dan tingginya otomatis-->
-              <img src="img/Porto3.jpg" class="img-fluid" alt="Thumbnail 1" />
-              <h6>Toba Lake</h6>
-              <h4>Golden Moment</h4>
-            </div>
-          </div>
-          <!-- Image 2 -->
-          <div class="col-md-6 col-lg-3">
-            <div class="box">
-              <img src="img/Porto1.jpg" class="img-fluid" alt="Thumbnail 2" />
-              <h6>New</h6>
-              <h4>Journey</h4>
-            </div>
-          </div>
-          <!-- Image 3 -->
-          <div class="col-md-6 col-lg-3">
-            <div class="box">
-              <img src="img/Porto2.jpg" class="img-fluid" alt="Thumbnail 3" />
-              <h6>Harmony</h6>
-              <h4>Nusantara</h4>
-            </div>
-          </div>
-          <!-- Image 4 -->
-          <div class="col-md-6 col-lg-3">
-            <div class="box">
-              <img src="img/Porto4.jpg" class="img-fluid" alt="Thumbnail 4" />
-              <h6>Wonderful</h6>
-              <h4>Bromo</h4>
-            </div>
-          </div>
+        <div class="row mt-5" id="portofolio-container">
+          <!-- Karya-karya utama akan dimuat disini-->
         </div>
+        
+        <!-- Script untuk memuat data JSON -->
+        <script>
+          async function getData() {
+            const url = "gallery.json";
+            try {
+              const response = await fetch(url);
+              if (!response.ok) {
+                throw new Error(`Response status: ${response.status}`);
+              }
+
+              const json = await response.json();
+              console.log(json);
+
+              const container = document.getElementById("portofolio-container");
+              // Looping hanya 4 data pertama
+              for (let i = 0; i < 4; i++) {
+                const gallery = json[i];
+                container.innerHTML += `
+                  <div class="col-md-6 col-lg-3">
+                    <div class="box">
+                      <img src="${gallery.image}" class="img-fluid" alt="${gallery.title}" />
+                      <h6>${gallery.subtitle}</h6>
+                      <h4>${gallery.title}</h4>
+                    </div>
+                  </div>`;
+              };
+            } catch (error) {
+              console.error(error.message);
+            }
+          }
+
+          getData();
+        </script>
+
         <!-- Tombol untuk pindah ke halaman My Art Gallery yang menampilkan lebih banyak gambar -->
         <div class="center-btn">
           <a href="myart.html" class="btn btn-custom">See More</a>
