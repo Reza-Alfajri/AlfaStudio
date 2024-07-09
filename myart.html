@@ -60,41 +60,94 @@
         <div class="row mt-5" id="portofolio-container">
           <!-- Karya-karya utama akan dimuat disini-->
         </div>
-
-        <!-- Script untuk memuat data JSON -->
-        <script>
-          async function getData() {
-            const url = 'gallery.json';
-            try {
-              const response = await fetch(url);
-              if (!response.ok) {
-                throw new Error(`Response status: ${response.status}`);
-              }
-
-              const json = await response.json();
-              console.log(json);
-
-              const container = document.getElementById('portofolio-container');
-              json.forEach((gallery) => {
-                container.innerHTML += `
-                <div class="col-md-6">
-                  <div class="box">
-                    <img src="${gallery.image}" class="img-fluid" alt="Thumbnail 1" />
-                    <h6>${gallery.subtitle}</h6>
-                    <h4>${gallery.title}</h4>
-                  </div>
-                </div>`;
-              });
-            } catch (error) {
-              console.error(error.message);
-            }
-          }
-
-          getData();
-        </script>
       </div>
+
+      <!-- Script untuk memuat data JSON -->
+      <script>
+        async function getData() {
+          const url = 'gallery.json';
+          try {
+            // Ambil data dari URL yang disediakan
+            const response = await fetch(url);
+            // Cek respons dari server berhasil
+            if (!response.ok) {
+              throw new Error(`Response status: ${response.status}`);
+            }
+            // Ambil JSON dari respons
+            const json = await response.json();
+            console.log(json);
+            // Ambil elemen dengan ID 'portofolio-container'
+            const container = document.getElementById('portofolio-container');
+            
+            // Render setiap gallery item
+            json.forEach((gallery) => {
+              container.innerHTML += `
+              <div class="col-md-6">
+                <div class="box">
+                  <img src="${gallery.image}" class="img-fluid" alt="Thumbnail 1" />
+                  <h6>${gallery.subtitle}</h6>
+                  <h4>${gallery.title}</h4>
+                </div>
+              </div>`;
+            }); // Tmbahkan Card ke kontainer berdasarkan data JSON
+          } catch (error) {
+            console.error(error.message);
+          }
+        }
+        // Panggil fungsi untuk memuat data JSON saat halaman dimuat
+        getData();
+      </script>
     </section>
 
+    <!-- Unsplash Photos Section -->
+    <section class="porto" id="unsplash-photos">
+      <div class="container">
+        <div class="center-text mt-5">
+          <h2>Unsplash Gallery</h2>
+        </div>
+        <div class="row mt-5" id="unsplash-container">
+          <!-- Foto-foto dari Unsplash akan dimuat disini -->
+        </div>
+      </div>
+
+      <!-- Script untuk memuat data dari Unsplash API -->
+      <script>
+        async function getUnsplashPhotos() {
+          // Acces Key Unsplash
+          const accessKey = 'nayuux7g1di9_8qzavMw4daAMAlvfGIqEKfDNDtSsdk';
+          // Username Unsplash
+          const username = 'reza_alfa7';
+          // URL untuk dapat foto dari API Unsplash
+          const url = `https://api.unsplash.com/users/${username}/photos?client_id=${accessKey}`;
+          try {
+            const response = await fetch(url);
+            if (!response.ok) {
+              throw new Error(`Response status: ${response.status}`);
+            }
+
+            const json = await response.json();
+            console.log(json);
+
+            const container = document.getElementById('unsplash-container');
+            
+            // Render setiap foto Unsplash
+            json.forEach((photo) => {
+              container.innerHTML += `
+              <div class="col-md-6">
+                <div class="box">
+                  <img src="${photo.urls.regular}" class="img-fluid" alt="${photo.alt_description}" />
+                </div>
+              </div>`;
+            });
+          } catch (error) {
+            console.error(error.message);
+          }
+        }
+        // Panggil fungsi untuk memuat data dari Unsplash API saat halaman dimuat
+        getUnsplashPhotos();
+      </script>
+    </section>
+    
     <!-- Social Media Section -->
     <section class="social-media" id="contact">
       <div class="container">
