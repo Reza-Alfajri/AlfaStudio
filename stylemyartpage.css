@@ -160,6 +160,11 @@ img {
   font-weight: 700;
 }
 
+/* Unsplash Section */
+#unsplash-photos {
+  padding-bottom: 40px; /* Atur padding bottom*/
+}
+
 /* Social Media Section */
 .social-media {
   padding: 100px 0;
